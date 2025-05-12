@@ -87,8 +87,14 @@
         }, 20000); // Stop track1 after 20 seconds
       }
 
-      // Start playing the tracks when the page loads
-      window.onload = playTracks;
+      // Wait for user interaction to start playback
+      window.addEventListener(
+        "click",
+        () => {
+          playTracks();
+        },
+        { once: true }
+      );
     </script>
   </body>
 </html>

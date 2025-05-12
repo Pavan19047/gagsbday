@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Hbd Gagana❤️</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Short+Stack&amp;family=Homemade+Apple&amp;display=swap"
@@ -21,6 +21,11 @@
     <!-- partial:index.partial.html -->
     <!-- A pen by Developer Rahul  -->
     <div class="paper heart"></div>
+
+    <div class="paper image">
+      <p>Tell me how was both the songs</p>
+      <p>For full audio $1 🤣</p>
+    </div>
 
     <div class="paper image">
       <p>Wishing You</p>
@@ -53,7 +58,31 @@
     <div class="paper">
       <p class="p1">Drag the papers to move!</p>
     </div>
+
+    <!-- Added audio elements for the music tracks -->
+    <audio id="track1" src="Happy birthday Gagana.mp3"></audio>
+    <audio id="track2" src="Happy birthday Gagana Rap.mp3"></audio>
+
     <!-- partial -->
     <script src="./script.js"></script>
+    <script>
+      // JavaScript to play the tracks sequentially for 20 seconds each
+      const track1 = document.getElementById("track1");
+      const track2 = document.getElementById("track2");
+
+      function playTracks() {
+        track1.play();
+        setTimeout(() => {
+          track1.pause();
+          track2.play();
+          setTimeout(() => {
+            track2.pause();
+          }, 20000); // Stop track2 after 20 seconds
+        }, 20000); // Stop track1 after 20 seconds
+      }
+
+      // Start playing the tracks when the page loads
+      window.onload = playTracks;
+    </script>
   </body>
 </html>
